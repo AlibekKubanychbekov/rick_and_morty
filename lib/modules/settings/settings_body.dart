@@ -56,7 +56,7 @@ class _SettingsBodyState extends State<SettingsBody> {
         ),
         Divider(
           thickness: 0.5,
-          color: Colors.white.withOpacity(0.2),
+          color: Colors.white.withValues(alpha: 0.2),
         ),
         const Text(
           'Theme view',
@@ -106,7 +106,8 @@ class _SettingsBodyState extends State<SettingsBody> {
                                               .watch<ThemeProvider>()
                                               .currentThemeValue ==
                                           AppThemeMode.dark
-                                      ? AppColors.mainTextClr.withOpacity(0.4)
+                                      ? AppColors.mainTextClr
+                                          .withValues(alpha: 0.4)
                                       : AppColors.unSelectedClr,
                                 ),
                               ),
@@ -132,7 +133,8 @@ class _SettingsBodyState extends State<SettingsBody> {
                                               .currentThemeValue ==
                                           AppThemeMode.light
                                       ? AppColors.unSelectedClr
-                                      : AppColors.mainTextClr.withOpacity(0.4),
+                                      : AppColors.mainTextClr
+                                          .withValues(alpha: 0.4),
                                 ),
                               ),
                               leading: IconButton(

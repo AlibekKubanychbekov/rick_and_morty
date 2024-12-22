@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 
 class DioSetting {
@@ -19,16 +21,15 @@ class DioSetting {
     dio.interceptors.add(
       InterceptorsWrapper(
         onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-          print('Request: Method ${options.method}, ${options.uri}');
+          log('Request: Method ${options.method}, ${options.uri}');
           return handler.next(options);
         },
         onResponse: (Response response, ResponseInterceptorHandler handler) {
-          print(
-              'Response: Status code ${response.statusCode}, data => ${response.data}');
+          log('Response: Status code ${response.statusCode}, data => ${response.data}');
           return handler.next(response);
         },
         onError: (DioException error, ErrorInterceptorHandler handler) {
-          print('Error: ${error.error}, ${error.message}');
+          log('Error: ${error.error}, ${error.message}');
           return handler.next(error);
         },
       ),

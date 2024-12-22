@@ -25,7 +25,7 @@ class ProfileWidget extends StatelessWidget {
                 backgroundColor:
                     context.watch<ThemeProvider>().currentThemeValue ==
                             AppThemeMode.dark
-                        ? AppColors.mainTextClr.withOpacity(0.5)
+                        ? AppColors.mainTextClr.withValues(alpha: 0.5)
                         : AppColors.unSelectedClr,
               ),
               const SizedBox(

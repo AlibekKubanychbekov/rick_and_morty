@@ -39,7 +39,7 @@ class ThemeProvider extends ChangeNotifier {
         bodySmall: TextStyle(color: AppColors.mainTextClr)),
   );
   final lightTheme = ThemeData(
-    scaffoldBackgroundColor: AppColors.mainTextClr.withOpacity(0.97),
+    scaffoldBackgroundColor: AppColors.mainTextClr.withValues(alpha: 0.9),
     textTheme: const TextTheme(
       bodyMedium: TextStyle(color: AppColors.mainDark),
     ),
